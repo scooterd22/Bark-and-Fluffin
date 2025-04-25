@@ -6,7 +6,7 @@ var dog: CharacterBody2D
 
 @export var wander_speed := 20.0 #speed feels really good!
 @export var flee_speed := 100.0
-@export var flee_distance := 100.0  # start fleeing if dog is closer than this
+@export var flee_distance := 50.0  # start fleeing if dog is closer than this
 @export var wander_change_interval := randi_range(1, 5) #currently this feels okay lol, not great but okay
 var wander_direction: Vector2 = Vector2.ZERO
 var wander_timer: float = 0.0
@@ -69,4 +69,3 @@ func _process(delta):
 	
 	# do random movement for sheep
 	
-
