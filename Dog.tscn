@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bmu4o2l0wxrtx"]
 
-[ext_resource type="Script" path="res://Dog.gd" id="1_gogn7"]
+[ext_resource type="Script" uid="uid://rq5nrkc7nlsr" path="res://Dog.gd" id="1_gogn7"]
 [ext_resource type="Texture2D" uid="uid://ds03rxgd4b3ux" path="res://Sprites/DogSprite.png" id="2_ijdnu"]
 [ext_resource type="AudioStream" uid="uid://bay5ho37gwudu" path="res://Sounds/DogBark.mp3" id="3_3b5wu"]
 

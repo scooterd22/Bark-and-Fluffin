@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://wxji285ss8kt"]
 
-[ext_resource type="Script" path="res://Sheep.gd" id="1_odrw8"]
+[ext_resource type="Script" uid="uid://turx0pvgiquf" path="res://Sheep.gd" id="1_odrw8"]
 [ext_resource type="Texture2D" uid="uid://dyvdh8w2e2fy" path="res://Sprites/SheepSprite.png" id="2_icfcr"]
 [ext_resource type="AudioStream" uid="uid://07ctdmwp6r65" path="res://Sounds/bah3.mp3" id="3_ri46n"]
 
