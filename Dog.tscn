@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmu4o2l0wxrtx"]
+
+[ext_resource type="Script" path="res://Dog.gd" id="1_gogn7"]
+[ext_resource type="Texture2D" uid="uid://ds03rxgd4b3ux" path="res://Sprites/DogSprite.png" id="2_ijdnu"]
+[ext_resource type="AudioStream" uid="uid://bay5ho37gwudu" path="res://Sounds/DogBark.mp3" id="3_3b5wu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fgqfy"]
+radius = 8.0
+height = 22.0
+
+[node name="Dog" type="CharacterBody2D"]
+script = ExtResource("1_gogn7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(0.666016, 0.415039)
+texture = ExtResource("2_ijdnu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_fgqfy")
+
+[node name="BarkPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3b5wu")
+volume_db = -4.952

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1xqqm6d5pc8r"]
+
+[ext_resource type="PackedScene" uid="uid://bmu4o2l0wxrtx" path="res://Dog.tscn" id="1_5e7ek"]
+[ext_resource type="PackedScene" uid="uid://wxji285ss8kt" path="res://Sheep.tscn" id="2_ycshq"]
+
+[node name="Farm" type="Node2D"]
+
+[node name="Dog" parent="." instance=ExtResource("1_5e7ek")]
+position = Vector2(207, 193)
+
+[node name="Sheep" parent="." instance=ExtResource("2_ycshq")]
+position = Vector2(251, 129)
+
+[node name="Sheep2" parent="." instance=ExtResource("2_ycshq")]
+position = Vector2(260, 155)
+
+[node name="Sheep3" parent="." instance=ExtResource("2_ycshq")]
+position = Vector2(215, 134)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 138.0
+offset_top = 78.0
+offset_right = 305.0
+offset_bottom = 129.0
+text = "bark label
+"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(288, 162)
+zoom = Vector2(2, 2)

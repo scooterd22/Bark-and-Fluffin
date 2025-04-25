@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://wxji285ss8kt"]
+
+[ext_resource type="Script" path="res://Sheep.gd" id="1_odrw8"]
+[ext_resource type="Texture2D" uid="uid://dyvdh8w2e2fy" path="res://Sprites/SheepSprite.png" id="2_icfcr"]
+[ext_resource type="AudioStream" uid="uid://07ctdmwp6r65" path="res://Sounds/bah3.mp3" id="3_ri46n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k47x2"]
+radius = 5.0
+height = 14.0
+
+[node name="Sheep" type="CharacterBody2D"]
+script = ExtResource("1_odrw8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.76837e-07, 3.57628e-07)
+scale = Vector2(0.28125, 0.251953)
+texture = ExtResource("2_icfcr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("CapsuleShape2D_k47x2")
+
+[node name="Bah" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ri46n")
+volume_db = -26.511
