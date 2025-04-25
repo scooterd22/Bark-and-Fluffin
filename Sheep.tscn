@@ -5,19 +5,19 @@
 [ext_resource type="AudioStream" uid="uid://07ctdmwp6r65" path="res://Sounds/bah3.mp3" id="3_ri46n"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k47x2"]
-radius = 5.0
-height = 14.0
+radius = 13.0
+height = 26.0
 
 [node name="Sheep" type="CharacterBody2D"]
 script = ExtResource("1_odrw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-4.76837e-07, 3.57628e-07)
-scale = Vector2(0.28125, 0.251953)
+position = Vector2(2, 2.38419e-07)
+scale = Vector2(0.578125, 0.469238)
 texture = ExtResource("2_icfcr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -1)
+position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_k47x2")
 
 [node name="Bah" type="AudioStreamPlayer" parent="."]

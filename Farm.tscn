@@ -18,10 +18,10 @@ position = Vector2(260, 155)
 position = Vector2(215, 134)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 138.0
-offset_top = 78.0
-offset_right = 305.0
-offset_bottom = 129.0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 183.0
+offset_bottom = 55.0
 text = "bark label
 "
 
