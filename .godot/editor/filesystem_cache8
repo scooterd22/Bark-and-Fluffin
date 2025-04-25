@@ -1,12 +1,13 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1745560254
+::res://::1745608742
 Dog.gd::GDScript::-1::1745556259::0::1::::<>CharacterBody2D<>::
 Dog.tscn::PackedScene::3271761592625092953::1745559534::0::1::::<><>::res://Dog.gd<>uid://ds03rxgd4b3ux
-Farm.tscn::PackedScene::6646232713251288691::1745559771::0::1::::<><>::uid://bmu4o2l0wxrtx
+Farm.tscn::PackedScene::6646232713251288691::1745608417::0::1::::<><>::uid://bmu4o2l0wxrtx::::res://Dog.tscn<>uid://wxji285ss8kt::::res://Sheep.tscn
+Fence.tscn::PackedScene::4562841036988386189::1745608327::0::1::::<><>::uid://be1qnukyovxdp::::res://icon.svg
 icon.svg::CompressedTexture2D::2721845634080869849::1745457117::1745560242::1::::<><>::
 README.md::TextFile::-1::1745559747::0::1::::<><>::
-Sheep.gd::GDScript::-1::1745559771::0::1::::<>CharacterBody2D<>::
-Sheep.tscn::PackedScene::1592197458163087003::1745559534::0::1::::<><>::res://Sheep.gd<>uid://dyvdh8w2e2fy
+Sheep.gd::GDScript::-1::1745607186::0::1::::<>CharacterBody2D<>::
+Sheep.tscn::PackedScene::1592197458163087003::1745607186::0::1::::<><>::res://Sheep.gd<>uid://dyvdh8w2e2fy::::res://Sprites/SheepSprite.png<>uid://07ctdmwp6r65::::res://Sounds/bah3.mp3
 ::res://Sounds/::1745560242
 Bah2.mp3::AudioStreamMP3::2823086595320638759::1745531481::1745560242::1::::<><>::
 bah3.mp3::AudioStreamMP3::1820936720279015336::1745531555::1745560242::1::::<><>::
@@ -15,3 +16,5 @@ SheepBah.mp3::AudioStreamMP3::2287622178420249644::1745531369::1745560242::1::::
 ::res://Sprites/::1745560242
 DogSprite.png::CompressedTexture2D::8476002332190236903::1745555598::1745560242::1::::<><>::
 SheepSprite.png::CompressedTexture2D::261392430919187966::1745555603::1745560242::1::::<><>::
+::res://TilemapArt/::1745608742
+fence.png::CompressedTexture2D::2891284943824036974::1745608738::1745608743::1::::<><>::

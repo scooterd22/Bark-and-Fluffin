@@ -6,16 +6,16 @@
 [node name="Farm" type="Node2D"]
 
 [node name="Dog" parent="." instance=ExtResource("1_5e7ek")]
-position = Vector2(207, 193)
+position = Vector2(289, 162)
 
 [node name="Sheep" parent="." instance=ExtResource("2_ycshq")]
-position = Vector2(251, 129)
+position = Vector2(315, 71)
 
 [node name="Sheep2" parent="." instance=ExtResource("2_ycshq")]
-position = Vector2(260, 155)
+position = Vector2(346, 77)
 
 [node name="Sheep3" parent="." instance=ExtResource("2_ycshq")]
-position = Vector2(215, 134)
+position = Vector2(286, 72)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 16.0
