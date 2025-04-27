@@ -22,7 +22,7 @@ func _ready():
 	
 
 func _on_dog_barked():
-	print("oh shit!!")
+	#print("oh shit!!")
 	flee()
 	
 func flee():
@@ -39,7 +39,7 @@ func _process(delta):
 	var distance_to_dog = to_dog.length()
 	
 	if distance <= flee_distance:
-		print("oh shit!! fleeing")
+		#print("oh shit!! fleeing")
 		flee()
 
 	
@@ -58,7 +58,7 @@ func _process(delta):
 	else:
 		wander_timer -= delta #once a second the wander time goes down 
 		if wander_timer <= 0: # when the timer hits 0
-			print("wandering")
+			#print("wandering")
 			wander_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized() #picks random direction
 			wander_timer = wander_change_interval #sets timer to new change intervval
 			velocity = wander_direction * wander_speed #calculates speed with 

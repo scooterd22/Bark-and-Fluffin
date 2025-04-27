@@ -3,3 +3,5 @@ res://Farm.tscn
 res://Fence.tscn
 res://Sheep.tscn
 res://Sheep.gd
+res://pen.gd
+res://Dog.gd

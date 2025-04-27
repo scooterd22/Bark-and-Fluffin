@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1xqqm6d5pc8r"]
+[gd_scene load_steps=9 format=4 uid="uid://c1xqqm6d5pc8r"]
 
 [ext_resource type="PackedScene" uid="uid://bmu4o2l0wxrtx" path="res://Dog.tscn" id="1_5e7ek"]
 [ext_resource type="PackedScene" uid="uid://wxji285ss8kt" path="res://Sheep.tscn" id="2_ycshq"]
 [ext_resource type="Texture2D" uid="uid://bhgtbm6363wag" path="res://TilemapArt/fence.png" id="3_o1bn1"]
+[ext_resource type="Script" uid="uid://h3qv128l30kj" path="res://pen.gd" id="4_xqpul"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o1bn1"]
 
@@ -10,9 +11,10 @@
 texture = ExtResource("3_o1bn1")
 texture_region_size = Vector2i(12, 12)
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.84541, -5.57562, 5.84541, -5.57562, 6.02526, 6.1152, -5.66555, 5.93534)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.79859, -5.39576, 2.1583, -5.2159, 2.51802, 5.57562, -1.97845, 5.57562)
 1:0/0 = 0
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.97845, -5.75548, 2.33816, -5.57562, 2.23356, -1.52288, 5.99001, 1.92899, 5.48238, 3.55339, 2.13204, 1.42136, 2.03051, 5.58391, -2.33509, 5.68543, -2.33509, 1.01526, -5.88848, 4.16255, -6.09153, 1.52288, -2.33509, -1.31983)
 3:0/0 = 0
 4:0/0 = 0
 0:1/0 = 0
@@ -41,7 +43,9 @@ texture_region_size = Vector2i(12, 12)
 3:5/0 = 0
 4:5/0 = 0
 5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.61873, -5.39576, 1.97845, -5.39576, 2.33816, -1.25901, 5.93534, 1.25901, 5.75548, 3.59718, 2.33816, 1.79859, 2.1583, 5.2159, -1.79859, 5.57562, -1.79859, 1.07915, -4.85619, 3.23746, -5.75548, 2.15831, -2.69788, -1.07915)
 5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.1583, -5.57562, 1.97845, 5.39576, -1.97845, 5.75548, -2.33816, -5.57562)
 5:2/0 = 0
 5:3/0 = 0
 5:4/0 = 0
@@ -66,19 +70,22 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_o1bn1")
 physics_layer_1/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_xqpul")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7wqs"]
+size = Vector2(80, 109)
+
 [node name="Farm" type="Node2D"]
 
 [node name="Dog" parent="." instance=ExtResource("1_5e7ek")]
-position = Vector2(289, 162)
+position = Vector2(149, 154)
 
-[node name="Sheep" parent="." instance=ExtResource("2_ycshq")]
+[node name="Sheep" parent="." groups=["Sheep"] instance=ExtResource("2_ycshq")]
 position = Vector2(315, 71)
 
-[node name="Sheep2" parent="." instance=ExtResource("2_ycshq")]
+[node name="Sheep2" parent="." groups=["Sheep"] instance=ExtResource("2_ycshq")]
 position = Vector2(346, 77)
 
-[node name="Sheep3" parent="." instance=ExtResource("2_ycshq")]
-position = Vector2(286, 72)
+[node name="Sheep3" parent="." groups=["Sheep"] instance=ExtResource("2_ycshq")]
+position = Vector2(115, 159)
 
 [node name="Label" type="Label" parent="."]
 offset_left = 16.0
@@ -92,8 +99,20 @@ text = "bark label
 position = Vector2(288, 162)
 zoom = Vector2(2, 2)
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAACAAAAAAAAAAgAAAAAAAAAAAAAABMAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAACAAAAAAAAAA0AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA8AAAAAAAAAAAAAABAAAAAAAAAAAAAAABEAAAAAAAAAAAAAABIAAAAAAAAAAAABABMAAAAAAAAAAAACABMAAAAAAAAAAAADABMAAAAAAAAAAAAEABMAAAAAAAAAAAAFABMAAAAAAAAAAAAGABMAAAAAAAAAAAAHABMAAAAAAAAAAAAIABMAAAAAAAAAAAAJABMAAAAAAAAAAAAKABMAAAAAAAAAAAALABMAAAAAAAAAAAAMABMAAAAAAAAAAAANABMAAAAAAAAAAAAOABMAAAAAAAAAAAAPABMAAAAAAAAAAAAQABMAAAAAAAAAAAARABMAAAAAAAAAAAASABMAAAAAAAAAAAATABMAAAAAAAAAAAAUABMAAAAAAAAAAAAVABMAAAAAAAAAAAAWABMAAAAAAAAAAAAXABMAAAAAAAAAAAAYABMAAAAAAAAAAAAZABMAAAAAAAAAAAAaABMAAAAAAAAAAAAbABMAAAAAAAAAAAAcABMAAAAAAAAAAAAdABMAAAAAAAAAAAAeABMAAAAAAAAAAAAfABMAAAAAAAAAAAAgABMAAAAAAAAAAAAhABMAAAAAAAAAAAAiABMAAAAAAAAAAAAjABMAAAAAAAAAAAAjABIAAAAAAAAAAAAjABEAAAAAAAAAAAAjABAAAAAAAAAAAAAjAA8AAAAAAAAAAAAjAA4AAAAAAAAAAAAjAA0AAAAAAAAAAAAjAAwAAAAAAAAAAAAjAAsAAAAAAAAAAAAjAAoAAAAAAAAAAAAjAAkAAAAAAAAAAAAjAAgAAAAAAAAAAAAjAAcAAAAAAAAAAAAjAAYAAAAAAAAAAAAjAAUAAAAAAAAAAAAjAAQAAAAAAAAAAAAjAAMAAAAAAAAAAAAjAAIAAAAAAAAAAAAjAAEAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAOAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAARAAAAAAAAAAAAAAASAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAVAAAAAAAAAAAAAAAWAAAAAAAAAAAAAAAXAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAZAAAAAAAAAAAAAAAaAAAAAAAAAAAAAAAbAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAdAAAAAAAAAAAAAAAeAAAAAAAAAAAAAAAfAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAhAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAABAA0AAAACAAAAAAABAAYAAAACAAAAAAACAAYAAAACAAAAAAADAAYAAAACAAAAAAAEAAYAAAACAAAAAAACAA0AAAACAAAAAAADAA0AAAACAAAAAAAEAA0AAAACAAAAAAAFAA0AAAAFAAAAAAAFAAYAAAAFAAAAAAAFAAcAAAAFAAEAAAAFAAwAAAAFAAEAAAA=")
 tile_set = SubResource("TileSet_x7wqs")
 rendering_quadrant_size = 12
-format = 2
-layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 1245184, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 851968, 0, 0, 917504, 0, 0, 983040, 0, 0, 1048576, 0, 0, 1114112, 0, 0, 1179648, 0, 0, 1245185, 0, 0, 1245186, 0, 0, 1245187, 0, 0, 1245188, 0, 0, 1245189, 0, 0, 1245190, 0, 0, 1245191, 0, 0, 1245192, 0, 0, 1245193, 0, 0, 1245194, 0, 0, 1245195, 0, 0, 1245196, 0, 0, 1245197, 0, 0, 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 0, 0, 1245202, 0, 0, 1245203, 0, 0, 1245204, 0, 0, 1245205, 0, 0, 1245206, 0, 0, 1245207, 0, 0, 1245208, 0, 0, 1245209, 0, 0, 1245210, 0, 0, 1245211, 0, 0, 1245212, 0, 0, 1245213, 0, 0, 1245214, 0, 0, 1245215, 0, 0, 1245216, 0, 0, 1245217, 0, 0, 1245218, 0, 0, 1245219, 0, 0, 1179683, 0, 0, 1114147, 0, 0, 1048611, 0, 0, 983075, 0, 0, 917539, 0, 0, 852003, 0, 0, 786467, 0, 0, 720931, 0, 0, 655395, 0, 0, 589859, 0, 0, 524323, 0, 0, 458787, 0, 0, 393251, 0, 0, 327715, 0, 0, 262179, 0, 0, 196643, 0, 0, 131107, 0, 0, 65571, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0)
+
+[node name="Pen" type="Area2D" parent="."]
+position = Vector2(34, 130)
+script = ExtResource("4_xqpul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pen"]
+position = Vector2(12, 32.5)
+shape = SubResource("RectangleShape2D_x7wqs")
+
+[connection signal="body_entered" from="Pen" to="Pen" method="_on_body_entered"]
+[connection signal="body_exited" from="Pen" to="Dog" method="_on_pen_body_exited"]
+[connection signal="body_exited" from="Pen" to="Pen" method="_on_body_exited"]
